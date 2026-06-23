@@ -1,0 +1,75 @@
+---
+title: "Differential expression analysis of MOV10 over-expression in HEK293F cells"
+author: "Jen Annoh"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    code-fold: false
+    output-file: index.html
+---
+
+## Introduction
+
+In this study, we investigate the effects of **MOV10** overexpression in *HEK293F* cells using `DESeq2`.
+
+The data from this analysis is part of a larger study described in [Kenny PJ et al., Cell Rep 2014](https://pubmed.ncbi.nlm.nih.gov/25464849/).
+
+![](https://bioconductor.posit.co/images/logo/svg/Logo.svg)
+
+
+![bioconductor_logo](images/bioconductor.png){width="25%" fig-align="center"}
+
+The RNA-seq analysis was performed using the following steps:
+  
+  1.  Quality control with [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+  2.  Adapter trimming with [cutadapt](https://cutadapt.readthedocs.io/en/stable/)
+  3.  Pseudo-alignment with [salmon](https://combine-lab.github.io/salmon/) to the human transcriptome (GRCh38 Ensembl release 106).
+  
+  
+The DESeq2 dataset contains counts for the following samples:
+
+| Dataset    | Description           | Replicate   |
+|------------|-----------------------|-------------|
+| Control_1  | Control               | replicate 1 |
+| Control_2  | Control               | replicate 2 |
+| Control_3  | Control               | replicate 3 |
+| MOV10_OE_1 | MOV10 over-expression | replicate 1 |
+| MOV10_OE_2 | MOV10 over-expression | replicate 2 |
+| MOV10_OE_3 | MOV10 over-expression | replicate 3 |
+
+
+:::{.callout-note}
+This data has already been loaded into a DESeq2 dataset using `tximport` and saved as an RDS file. You can load the dataset into R using the `readRDS()` function.
+:::
+
+## Data analysis
+
+```{r load_libraries}
+#| message: false
+#| warning: false
+# add block options here
+
+# these don't seem to work on windows
+# #| warning: FALSE
+# #| message: FALSE
+
+# Load the libraries we will use in this analysis
+library(tidyverse)
+library(DESeq2)
+library(plotly)
+library(pheatmap)
+library(RColorBrewer)
+library(plotly)
+library(apeglm)
+library(DT)
+library(ggrepel)
+
+# Load the DESeq2 dataset
+dds <- readRDS("data/MOV10_dds.rds")
+# Display the column data from our dataset
+colData(dds)
+```
+
