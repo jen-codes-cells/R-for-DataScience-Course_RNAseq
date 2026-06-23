@@ -241,7 +241,7 @@ The volcano plot below shows the log2 fold change (x-axis) versus the -log10 adj
 #| fig-width: 6
 #| fig-height: 6
 
-sig_cols <- c("Not Significant" = "grey60", "padj" = "#143960", "l2FC" = "#08A4BD", "Both" = "#C91F3A")
+sig_cols <- c("Not Significant" = "grey80", "padj" = "#143960", "l2FC" = "#08A4BD", "Both" = "#C91F3A")
 
 topTen <- result_table |> head(n = 10)
 
