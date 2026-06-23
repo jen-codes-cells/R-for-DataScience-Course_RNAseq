@@ -50,11 +50,6 @@ This data has already been loaded into a DESeq2 dataset using `tximport` and sav
 ```{r load_libraries}
 #| message: false
 #| warning: false
-# add block options here
-
-# these don't seem to work on windows
-# #| warning: FALSE
-# #| message: FALSE
 
 # Load the libraries we will use in this analysis
 library(tidyverse)

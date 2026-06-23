@@ -17,3 +17,11 @@ dir.create("data")
 ## Windows
 download.file("https://bifx-core3.bio.ed.ac.uk/training/DSB/data/MOV10_dds.rds", destfile = "data/MOV10_dds.rds", mode = "wb")
 download.file("https://bifx-core3.bio.ed.ac.uk/training/DSB/data/salmon_tx2gene.tsv", destfile = "data/salmon_tx2gene.tsv", mode = "wb")
+
+# Install the gitcreds package if you haven't already
+install.packages("gitcreds")
+
+# Load the gitcreds package
+library(gitcreds)
+# Add your GitHub credentials to your project
+gitcreds::gitcreds_set()
