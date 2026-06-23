@@ -11,7 +11,7 @@ format:
     output-file: index.html
 ---
 
-![](images/quarto_hex.png){width="25%"} ![](images/renv_hex.png){width="25%"}
+![](images/quarto_hex.png){width="25%"} ![](images/renv_hex2.png){width="25%"}
 
 In this study, we investigate the effects of **MOV10** overexpression in *HEK293F* cells using `DESeq2`.
 
